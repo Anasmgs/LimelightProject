@@ -1,0 +1,7 @@
+apache-airflow-providers-google
+psycopg2-binary
+pandas
+requests
+numpy
+datetime
+google-cloud-storage
