@@ -143,7 +143,7 @@ def load_gcs_to_bq(**context):
 
 
 
-with DAG(dag_id="etl_dag_gcs", default_args=default_args, schedule_interval= timedelta(minutes=360), catchup=False) as dag:
+with DAG(dag_id="etl_dag_gcs", default_args=default_args, schedule_interval= timedelta(minutes=30), catchup=False) as dag:
     start = DummyOperator(task_id="start")
 
     extract_velib_jsons = PythonOperator(task_id="extract_velib_jsons", python_callable=extract_velib_jsons)
