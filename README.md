@@ -38,7 +38,7 @@ Contributions from the community are welcome! If you'd like to contribute to thi
 
 ## Author
 
-- Anas A. Maghous:[Linkedin]
+- Anas Maghous:[Linkedin]
 
 
 ## Acknowledgments
