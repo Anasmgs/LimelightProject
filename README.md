@@ -62,15 +62,15 @@ To get started with Limelight, follow these steps:
     cd LimelightProject
    ```
    
-(1.a Launch Docker Desktop if not already running)
+2.  Launch Docker Desktop if not already running
 
-2. Airflow database set-up
+3. Set-up Airflow databases:
    
    ```bash
    Docker compose up airflow init
    ```
    
-3. Launch Airflow server
+4. Launch Airflow server:
    
    ```bash
    Docker compose up
@@ -78,7 +78,7 @@ To get started with Limelight, follow these steps:
    Airflow will be running at "http://localhost:8080/" (id & pwd : airflow)
 
 5. In Airflow UI:
-   - Set-up Google Cloud connection [Doc here](https://airflow.apache.org/docs/apache-airflow-providers-google/stable/connections/gcp.html)
+   - Set-up Google Cloud connection [(Doc here)](https://airflow.apache.org/docs/apache-airflow-providers-google/stable/connections/gcp.html)
    - Set-up ENV variables:
 
   <img width="450" alt="AirflowUI_DAGS" src="https://github.com/Anasmgs/LimelightProject/assets/104752748/a06a1ad2-5bc7-409c-919f-7485d78a77d1"> 
