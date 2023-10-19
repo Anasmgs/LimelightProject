@@ -1,6 +1,5 @@
 plugins
 logs
 tmp
-schema_BQTable.json
 __pycache__
 
