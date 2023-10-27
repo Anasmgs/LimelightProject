@@ -46,12 +46,12 @@ LimelightProject is an automated ETL pipeline using near-real time data of 1,462
 
  ## Getting Started
 
-To get started with Limelight, follow these steps:
+To get started with Limelight, please follow these steps:
 
 ### Prerequisites
-- Kafka Confluent Cloud Account (400$ credit offered)
-- GCP project with two GCS buckets (one bucket for raw data, another as staging area for the cleaned data) and one BigQuery dataset
-- Docker
+- Kafka Confluent Cloud Account (free trial [(here)](https://confluent.cloud/signup)
+- GCP project with two GCS buckets (one for raw data, another as staging area for the cleaned data) and one BigQuery dataset
+- [Docker](https://www.docker.com/products/docker-desktop/) 
 
 ### Installation&Usage
 
@@ -62,7 +62,7 @@ To get started with Limelight, follow these steps:
     cd LimelightProject
    ```
    
-2.  Launch Docker Desktop if not already running
+2. Launch Docker Desktop if not already running
 
 3. Set-up Airflow databases:
    
@@ -75,10 +75,10 @@ To get started with Limelight, follow these steps:
    ```bash
    Docker compose up
    ```
-   Airflow will be running at "http://localhost:8080/" (id & pwd : airflow)
+   Airflow will be running at http://localhost:8080/ (id & pwd : airflow)
 
 5. In Airflow UI:
-   - Set-up Google Cloud connection [(Doc here)](https://airflow.apache.org/docs/apache-airflow-providers-google/stable/connections/gcp.html)
+   - Set-up Google Cloud connection [(Documentation)](https://airflow.apache.org/docs/apache-airflow-providers-google/stable/connections/gcp.html)
    - Set-up ENV variables:
 
   <img width="450" alt="AirflowUI_DAGS" src="https://github.com/Anasmgs/LimelightProject/assets/104752748/a06a1ad2-5bc7-409c-919f-7485d78a77d1"> 
@@ -101,7 +101,7 @@ Contributions from the community are welcome! If you'd like to contribute to thi
 
 ## Acknowledgments
 
-Thanks to the open-source community for providing the tools and libraries that made this project possible.
+Thanks to the open-source community providers for the tools and libraries that made this project possible.
 
 ## References
 
