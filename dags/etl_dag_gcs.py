@@ -6,6 +6,7 @@ To use this DAG, you need to set some ENV variables within the Airflow UI:
 - `GCSBucketIn`: the name of the GCS bucket where the raw data streamed will be stored.
 - `GCSBucketOut`: the name of the GCS bucket where the cleaned data will be stored.
 - `BQDataset`: the name of the BigQuery dataset where the cleaned data will be loaded.
+- `BQTable`: the name of the BigQuery table where the cleaned data will be loaded.
 
 Also set the connection for the GCloud account.
 """
@@ -83,8 +84,8 @@ def transform_velib_data(**context):
             for line in f:
                 temp.append(json.loads(line))
         df = pd.DataFrame()
-        for i in range(len(temp)): # i is the index for the 20 JSON lines unpacked (1 line every 3 minutes)
-            for j in range(len(temp[0]["records"])): # j is the index for the 1462 velib stations for each i (1462 stations data for every 3 minutes of the hour)
+        for i in range(len(temp)): # i is the index for the JSON lines unpacked (1 line every minute)
+            for j in range(len(temp[0]["records"])): # j is the index for the 1462 velib stations for each i (1462 stations data for every minute of the hour)
                 df_temp = pd.json_normalize(temp[i]["records"][j]["fields"]) # temporary dataframe with all wanted infos for every station xminute (except timestamp)
                 df_temp["timestamp"]=temp[i]["records"][j]["record_timestamp"] # add timestamp for every station xminute to the temporary dataframe
                 df = df.append(df_temp) # gradually concatenate temporary dataframes to "master" dataframe
@@ -123,7 +124,7 @@ def transform_velib_data(**context):
 def load_gcs_to_bq(**context):
     """Loads the clean CSV data into BigQuery to enable analysis using SQL Queries
     """
-
+    # We get the filenames from the context
     csv_to_load = context["task_instance"].xcom_pull(key="velib_csv_filename")
 
     op = GCSToBigQueryOperator(task_id="load_gcs_to_bq",
