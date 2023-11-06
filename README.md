@@ -49,7 +49,7 @@ LimelightProject is an automated ETL pipeline using near-real time data of 1,462
 To get started with Limelight, please follow these steps:
 
 ### Prerequisites
-- Kafka Confluent Cloud Account (free trial [(here)](https://confluent.cloud/signup)
+- Kafka Confluent Cloud Account (free trial [here](https://confluent.cloud/signup))
 - GCP project with two GCS buckets (one for raw data, another as staging area for the cleaned data) and one BigQuery dataset
 - [Docker](https://www.docker.com/products/docker-desktop/) 
 
@@ -101,7 +101,7 @@ Contributions from the community are welcome! If you'd like to contribute to thi
 
 ## Acknowledgments
 
-Thanks to the open-source community providers for the tools and libraries that made this project possible.
+Thanks to the open-source providers for the tools and libraries that made this project possible.
 
 ## References
 
